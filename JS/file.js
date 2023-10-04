@@ -19,10 +19,23 @@ function getTarget(id, title, price) {
     let li = document.createElement("li"); //creating li
     li.style.fontSize = "24px";
     li.style.fontWeight = "500";
+    li.style.padding = "5px 16px";
     li.innerText = `${orderdNumber}. ${prodTitleInnerText}`;//setting up li innertext dynamically according to div click
-    orderdNumber++; //increasing ordered 
+    orderdNumber++; //increasing ordered number
     cartInfo.appendChild(li); //appending li into ol
+    let purchaseBtn = document.getElementById("purchase-btn");
+    // checking the price is empty or not 
+    if (innerTextOfTotalPrice < 0) {
+        purchaseBtn.setAttribute('disabled', true)
+    }
+    else {
+        purchaseBtn.removeAttribute('disabled');
+        purchaseBtn.style.backgroundColor = "#E527B2";
+        purchaseBtn.addEventListener("click", function () {
 
+            openModal()
+        })
+    }
 
 
     // condition for disabling and enabling apply button 
@@ -38,7 +51,6 @@ function getTarget(id, title, price) {
         applyBtn.addEventListener('click', function () {
             let couponInputValue = couponInputField.value;
             let promoCode = document.getElementById("promo-code").innerText;
-            // let finalTotal = document.getElementById('final-total');
             // ckecking the promo code is correct or not 
             if (couponInputValue === promoCode) {
                 discount.innerText = (total * (20 / 100)).toFixed(2);
@@ -51,6 +63,9 @@ function getTarget(id, title, price) {
     }
 
 }
+
+let modal = document.getElementById('my_modal_1');
+
 function openModal() {
     const modal = document.getElementById('my_modal_1');
     modal.showModal();
@@ -60,18 +75,4 @@ function closeModal() {
     const modal = document.getElementById('my_modal_1');
     modal.close();
 }
-let modal = document.getElementById('my_modal_1');
 
-let makePurchase = document.getElementById('purchase-btn');
-makePurchase.addEventListener("click", function () {
-    if (total === '') {
-        alert('you did not added anything to purchase');
-        closeModal()
-        return;
-    }
-    else {
-        openModal();
-    }
-
-    console.log('clicked', total)
-})
