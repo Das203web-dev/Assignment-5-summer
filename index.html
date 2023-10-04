@@ -5,18 +5,294 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summer Sale</title>
+
+    <!-- tailwind css link  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- google font link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- fontawesome icon link  -->
+    <script src="https://kit.fontawesome.com/0f9102b880.js" crossorigin="anonymous"></script>
+
+    <!-- daisyui cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.3/dist/full.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        /* .disabled {
+            background-color: #cccccc55;
+            color: black;
+            cursor: not-allowed;
+        } */
+
+        /* .enable {
+            background-color: #e527b230;
+            color: white;
+            cursor: pointer;
+        } */
+    </style>
+
 </head>
 
 <body>
-    <header>
-        <h1>This is header</h1>
+    <header class="xl:mx-60 xl:mt-20 mb-52 mx-10 mt-10">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between">
+            <div class="w-full">
+                <h3 class="font-medium text-2xl md:text-[32px] mb-11">---SALE FEVER---</h3>
+                <h1 class="font-bold lg:text-6xl text-5xl mb-16">Purchase TK 200 or above & get <span
+                        class="text-[#E527B2]">20%
+                        off</span></h1>
+                <div class="flex items-center gap-4">
+                    <p class="text-base font-medium">Use Promo Code</p>
+                    <span id="promo-code"
+                        class="bg-[#E527B2] text-white text-base font-semibold px-6 py-3 rounded-lg">SELL200</span>
+                </div>
+            </div>
+            <div class="w-full md:mb-0 mb-10">
+                <img class="lg:w-[600px] lg:h-[600px] w-auto h-auto" src="images/Summer 1.png" alt="">
+            </div>
+        </div>
     </header>
-    <main>
+    <main class="xl:mx-60 xl:mt-20 mb-52 mx-10 mt-10">
+        <section class="flex lg:gap-10 gap-2 justify-between flex-col md:flex-row relative">
+            <!-- product div one  -->
+            <div>
+                <div class="mb-8 text-center md:text-left">
+                    <h3 class="text-4xl font-semibold mb-24">Kitchenware</h3>
 
+                    <!-- kitchenware product div  -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- product-1  -->
+                        <div onclick="getTarget('prod-1','prod-1-title','prod-1-price')" id="prod-1"
+                            class="text-center p-5 rounded-lg product">
+                            <div class="bg-slate-100 mb-5 lg:px-12 lg:py-8 px-8 py-2 rounded-lg">
+                                <img class="mx-auto w-28 h-32" src="images/prod1.png" alt="">
+                            </div>
+                            <div class="mb-2">
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                            </div>
+                            <h4 id="prod-1-title" class="font-semibold text-xl mb-2">K. Accessories</h4>
+                            <p><span id="prod-1-price">39.00 </span> TK</p>
+                        </div>
+
+                        <!-- product-2  -->
+                        <div onclick="getTarget('prod-2','prod-2-title','prod-2-price')" id="prod-2"
+                            class="text-center p-5 rounded-lg product">
+                            <div class="bg-slate-100 mb-5 lg:px-12 lg:py-8 px-8 py-2 rounded-lg">
+                                <img class="mx-auto  w-28 h-32" src="images/prod2.png" alt="">
+                            </div>
+                            <div class="mb-2">
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                            </div>
+                            <h4 id="prod-2-title" class="font-semibold text-xl mb-2">K. Accessories</h4>
+                            <p><span id="prod-2-price">25.00</span> TK</p>
+                        </div>
+
+                        <!-- product-3  -->
+                        <div onclick="getTarget('prod-3','prod-3-title','prod-3-price')" id="prod-3"
+                            class="text-center p-5 rounded-lg product">
+                            <div class="bg-slate-100 mb-5 lg:px-12 lg:py-8 px-8 py-2 rounded-lg">
+                                <img class="mx-auto w-28 h-32" src="images/prod3.png" alt="">
+                            </div>
+                            <div class="mb-2">
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                            </div>
+                            <h4 id="prod-3-title" class="font-semibold text-xl mb-2">Home Cooker</h4>
+                            <p><span id="prod-3-price">49.00</span> TK</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- product div two -->
+                <div class="mb-8 text-center md:text-left">
+                    <h3 class="text-4xl font-semibold mb-24">Sportswear</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- product 4  -->
+                        <div onclick="getTarget('prod-4','prod-4-title','prod-4-price')" id="prod-4"
+                            class="text-center p-5 rounded-lg product">
+                            <div class="bg-slate-100 mb-5 lg:px-12 lg:py-8 px-8 py-2  rounded-lg">
+                                <img class="mx-auto w-28 h-32" src="images/prod4.png" alt="">
+                            </div>
+                            <div class="mb-2">
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                            </div>
+                            <h4 id="prod-4-title" class="font-semibold text-xl mb-2">Sports Back Cap</h4>
+                            <p><span id="prod-4-price">49.00</span> TK</p>
+                        </div>
+                        <!-- product 5  -->
+                        <div onclick="getTarget('prod-5','prod-5-title','prod-5-price')" id="prod-5"
+                            class="text-center p-5 rounded-lg product">
+                            <div class="bg-slate-100 mb-5 lg:px-12 lg:py-8 px-8 py-2 rounded-lg">
+                                <img class="mx-auto  w-28 h-32" src="images/prod5.png" alt="">
+                            </div>
+                            <div class="mb-2">
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                            </div>
+                            <h4 id="prod-5-title" class="font-semibold text-xl mb-2">Full Jersey Set</h4>
+                            <p><span id="prod-5-price">69.00</span> TK</p>
+                        </div>
+                        <!-- product 6 -->
+                        <div onclick="getTarget('prod-6','prod-6-title','prod-6-price')" id="prod-6"
+                            class="text-center p-5 rounded-lg product">
+                            <div class="bg-slate-100 mb-5 lg:px-12 lg:py-8 px-8 py-2 rounded-lg">
+                                <img class="mx-auto w-28 h-32" src="images/prod6.png" alt="">
+                            </div>
+                            <div class="mb-2">
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                            </div>
+                            <h4 id="prod-6-title" class="font-semibold text-xl mb-2">Sports cates</h4>
+                            <p><span id="prod-6-price">159.00</span> TK</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- product div three  -->
+                <div class="mb-8 text-center md:text-left">
+                    <h3 class="text-4xl font-semibold mb-24">Furniture</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- product 7  -->
+                        <div onclick="getTarget('prod-7','prod-7-title','prod-7-price')" id="prod-7"
+                            class="text-center p-5 rounded-lg product">
+                            <div class="bg-slate-100 mb-5 lg:px-12 lg:py-8 px-8 py-2 rounded-lg">
+                                <img class="mx-auto w-28 h-32" src="images/prod7.png" alt="">
+                            </div>
+                            <div class="mb-2">
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                            </div>
+                            <h4 id="prod-7-title" class="font-semibold text-xl mb-2">Single Relax Chair</h4>
+                            <p><span id="prod-7-price">185.00</span> TK</p>
+                        </div>
+                        <!-- product 8  -->
+                        <div onclick="getTarget('prod-8','prod-8-title','prod-8-price')" id="prod-8"
+                            class="text-center p-5 rounded-lg product">
+                            <div class="bg-slate-100 mb-5 lg:px-12 lg:py-8 px-8 py-2 rounded-lg">
+                                <img class="mx-auto  w-28 h-32" src="images/prod8.png" alt="">
+                            </div>
+                            <div class="mb-2">
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                            </div>
+                            <h4 id="prod-8-title" class="font-semibold text-xl mb-2">Children play</h4>
+                            <p><span id="prod-8-price">299.00</span> TK</p>
+                        </div>
+                        <!-- product 9  -->
+                        <div onclick="getTarget('prod-9','prod-9-title','prod-9-price')" id="prod-9"
+                            class="text-center p-5 rounded-3xl product">
+                            <div class="bg-slate-100 mb-5 lg:px-12 lg:py-8 px-8 py-2 rounded-lg">
+                                <img class="mx-auto w-28 h-32" src="images/prod9.png" alt="">
+                            </div>
+                            <div class="mb-2">
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                                <i class="fa-solid fa-star w-6 h-6 text-[#FFC107]"></i>
+                            </div>
+                            <h4 id="prod-9-title" class="font-semibold text-xl mb-2">Flexible Sofa</h4>
+                            <p><span id="prod-9-price">339.00</span> TK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- cart div  -->
+            <div class="mt-36">
+                <div class="form-control mb-4">
+                    <label class="label">
+                        <span class="label-text font-medium text-2xl">Have coupon?</span>
+                    </label>
+                    <label class="input-group w-full">
+                        <input id="coupon-input" type="text" placeholder="Coupon code"
+                            class="input input-bordered w-full" />
+                        <button disabled id="apply-btn"
+                            class="apply px-4 py-2 bg-[#e527b230] text-white font-medium">Apply</button>
+                    </label>
+                </div>
+
+                <!-- product name container  -->
+                <!-- <div id="pName-container" class=" mb-4"> -->
+                <ol start="1" type="1" id="orderd-list" class="mb-4">
+
+                </ol>
+                <!-- </div> -->
+                <hr class="w-full">
+                <!-- product price container -->
+                <div class="pPrice-container text-2xl font-medium space-y-4 mt-4">
+                    <h4>Total price : <span id="total-price">0</span></h4>
+                    <h4>Discount : <span id="discount"></span></h4>
+                    <h4>Total : <span id="final-total"></span></h4>
+                </div>
+                <!-- <button id="purchase-btn"
+                    class="bg-[#E527B2] px-10 py-4 rounded-lg mt-12 text-white font-medium text-xl"></button> -->
+                <!-- Open the modal using ID.showModal() method -->
+                <button id="purchase-btn"
+                    class=" bg-[#E527B2] px-10 py-4 rounded-lg mt-12 text-white font-medium text-xl">Make
+                    Purchase</button>
+                <dialog id="my_modal_1" class="modal w-full">
+                    <div class="modal-box text-center">
+                        <img class="mx-auto" src="images/congo.png" alt="">
+                        <h3 class="font-bold text-3xl md:text-5xl">Congratulations</h3>
+                        <p class="py-4">Your Purchase the product</p>
+                        <div class="">
+                            <form method="dialog mx-auto">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button
+                                    class="bg-[#E527B2] px-10 py-4 rounded-lg mt-12 text-white font-medium text-xl mx-auto">Go
+                                    Home</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
+
+            </div>
+        </section>
     </main>
     <footer>
 
     </footer>
+    <!-- daisyui script cdn link  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- our javascript link  -->
+    <script src="JS/file.js"></script>
+
 </body>
 
 </html>
