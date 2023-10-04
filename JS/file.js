@@ -1,4 +1,5 @@
 let total = '';
+let orderdNumber = 1;
 function getTarget(id, title, price) {
     let productDiv = document.getElementById(id); //getting targeted div id
     let prodTitle = document.getElementById(title); //getting targeted div product title
@@ -18,7 +19,8 @@ function getTarget(id, title, price) {
     let li = document.createElement("li"); //creating li
     li.style.fontSize = "24px";
     li.style.fontWeight = "500";
-    li.innerText = prodTitleInnerText; //setting up li innertext according to div click
+    li.innerText = `${orderdNumber}. ${prodTitleInnerText}`;//setting up li innertext dynamically according to div click
+    orderdNumber++; //increasing ordered 
     cartInfo.appendChild(li); //appending li into ol
 
 
